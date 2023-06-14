@@ -1,8 +1,8 @@
-# imports: http://example.org/shapes/example
+# imports: http://example.org/shapes/bfo
 
-@prefix ex: <http://example.org/ontology/example/> .
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix kb: <http://example.org/kb/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -11,10 +11,408 @@
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/example> ;
+	owl:imports <http://example.org/shapes/bfo> ;
 	.
 
-kb:Thing-76f5befa-f5e1-4b2c-8d7b-ea7cf18ecca6
-	a ex:Thing ;
+kb:Continuant-13a8fe95-cca2-4df6-8f91-7930ec2cf095
+	a obo:BFO_0000002 ;
+	.
+
+kb:Continuant-30804de3-fec0-4f1f-bd34-df5cac173263
+	a obo:BFO_0000002 ;
+	obo:BFO_0000174 kb:Continuant-5a47db47-73d1-4c90-91d3-ad085ce70261 ;
+	.
+
+kb:Continuant-4606e20b-d386-4beb-91de-a51891acfa63
+	a obo:BFO_0000002 ;
+	.
+
+kb:Continuant-4e953d8f-132e-4901-a603-c42c17f44855
+	a obo:BFO_0000002 ;
+	obo:BFO_0000178 kb:Continuant-ffbdff5c-62ad-4a75-9729-c3aa292435d3 ;
+	.
+
+kb:Continuant-5a47db47-73d1-4c90-91d3-ad085ce70261
+	a obo:BFO_0000002 ;
+	.
+
+kb:Continuant-776161c8-69e0-4568-b21c-57c08fbdfd1f
+	a obo:BFO_0000002 ;
+	obo:BFO_0000186 kb:Continuant-c6319a2b-bbe6-4b12-908f-b021097a6174 ;
+	.
+
+kb:Continuant-c34d4597-29be-4abc-b723-a20949670903
+	a obo:BFO_0000002 ;
+	obo:BFO_0000176 kb:Continuant-13a8fe95-cca2-4df6-8f91-7930ec2cf095 ;
+	.
+
+kb:Continuant-c6319a2b-bbe6-4b12-908f-b021097a6174
+	a obo:BFO_0000002 ;
+	.
+
+kb:Continuant-c75af078-a9ec-479c-8b52-295ab6a84d06
+	a obo:BFO_0000002 ;
+	obo:BFO_0000187 kb:Continuant-4606e20b-d386-4beb-91de-a51891acfa63 ;
+	.
+
+kb:Continuant-ffbdff5c-62ad-4a75-9729-c3aa292435d3
+	a obo:BFO_0000002 ;
+	.
+
+kb:Entity-5d6597d6-3a2c-42cb-9ca2-d853b790aab3
+	a obo:BFO_0000001 ;
+	obo:BFO_0000108 kb:TemporalRegion-860568c1-203f-4762-a24b-c975c43cf89a ;
+	.
+
+kb:GenericallyDependentContinuant-91c418c1-55d9-4531-b318-bebe3d8957f2
+	a obo:BFO_0000031 ;
+	obo:BFO_0000084 kb:IndependentContinuant-6f0c7852-6a93-4a84-9860-b3250d6235ce ;
+	.
+
+kb:GenericallyDependentContinuant-e86c1e56-9692-496e-9ffe-657a7de57c06
+	a obo:BFO_0000031 ;
+	.
+
+kb:ImmaterialEntity-3bd0b8bc-c5c4-4ce7-837c-18f90b943ad7
+	a obo:BFO_0000141 ;
+	.
+
+kb:IndependentContinuant-072eefc2-070a-49e9-b363-a6d5559f18c4
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-0ca88951-7544-4a58-8136-37bf2ab8d63e
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-161597e8-e81f-48f7-89ae-35cbe7028398
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-1bbdc68a-04ad-4d00-a8cf-9fcea15a4d6a
+	a obo:BFO_0000004 ;
+	obo:BFO_0000083 kb:SpatialRegion-fb6d084b-7772-4eda-8141-657161630493 ;
+	.
+
+kb:IndependentContinuant-2469474a-b711-403f-b979-1716c884501c
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-3a9a69f6-0662-4217-a031-6441adf281f2
+	a obo:BFO_0000004 ;
+	obo:BFO_0000101 kb:GenericallyDependentContinuant-e86c1e56-9692-496e-9ffe-657a7de57c06 ;
+	.
+
+kb:IndependentContinuant-3f5eb479-8be4-4eda-8814-47e2e60f0acd
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-6f0c7852-6a93-4a84-9860-b3250d6235ce
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-c73cefbd-85c7-4cc6-adbc-70795ff80a69
+	a obo:BFO_0000004 ;
+	obo:BFO_0000125 kb:Process-7c9be316-fcfc-4766-a761-e9d9a9af9d57 ;
+	.
+
+kb:IndependentContinuant-d4785fa6-7be4-46ca-bbd7-433edfa122db
+	a obo:BFO_0000004 ;
+	obo:BFO_0000125 kb:SpecificallyDependentContinuant-a57999f8-a083-4bb5-8367-0789424109e0 ;
+	.
+
+kb:IndependentContinuant-d7a60cb4-6bbe-4df5-812d-e100ba84e85d
+	a obo:BFO_0000004 ;
+	obo:BFO_0000158 kb:SpecificallyDependentContinuant-fc7149fe-b5ed-4e66-9b43-9481e7dc5b2c ;
+	.
+
+kb:MaterialEntity-795af18f-f81b-4f02-a83d-cb2afd91877f
+	a obo:BFO_0000040 ;
+	.
+
+kb:Occurrent-02414079-cd66-4855-983d-5c2746b8d005
+	a obo:BFO_0000003 ;
+	.
+
+kb:Occurrent-669fe4a5-acbf-455d-bd0f-92c2d91f23b5
+	a obo:BFO_0000003 ;
+	obo:BFO_0000130 kb:SpatiotemporalRegion-0536eb22-268a-4826-b3ab-f22703c6ec08 ;
+	.
+
+kb:Occurrent-6c596ae3-9263-43fb-b164-dd889bdefab2
+	a obo:BFO_0000003 ;
+	obo:BFO_0000139 kb:Occurrent-ff0994aa-c9c7-4422-83fe-364924aabd18 ;
+	.
+
+kb:Occurrent-92a117c7-99fb-4a01-83e1-245c717b18f7
+	a obo:BFO_0000003 ;
+	obo:BFO_0000117 kb:Occurrent-e83afd12-71b8-4e11-a0cd-ffefe1f76f84 ;
+	.
+
+kb:Occurrent-9c80a19c-ce6a-409a-9dec-312d910162ce
+	a obo:BFO_0000003 ;
+	.
+
+kb:Occurrent-9edf32e8-264a-47ef-b6a4-09e31510aa9f
+	a obo:BFO_0000003 ;
+	obo:BFO_0000121 kb:Occurrent-d20fe4c8-619c-4d11-acdc-89cc30153cf8 ;
+	.
+
+kb:Occurrent-aec59ae4-5c9e-4de8-aeef-458791c48ce2
+	a obo:BFO_0000003 ;
+	obo:BFO_0000132 kb:Occurrent-02414079-cd66-4855-983d-5c2746b8d005 ;
+	.
+
+kb:Occurrent-d20fe4c8-619c-4d11-acdc-89cc30153cf8
+	a obo:BFO_0000003 ;
+	.
+
+kb:Occurrent-e83afd12-71b8-4e11-a0cd-ffefe1f76f84
+	a obo:BFO_0000003 ;
+	.
+
+kb:Occurrent-ebd4c324-fb6a-47de-9fd1-12246ead7f89
+	a obo:BFO_0000003 ;
+	obo:BFO_0000118 kb:Occurrent-edfdbbfb-b69a-4342-b1b4-58c231a7e865 ;
+	.
+
+kb:Occurrent-edfdbbfb-b69a-4342-b1b4-58c231a7e865
+	a obo:BFO_0000003 ;
+	.
+
+kb:Occurrent-ff0994aa-c9c7-4422-83fe-364924aabd18
+	a obo:BFO_0000003 ;
+	.
+
+kb:Process-00366314-fd6f-4a6a-aa06-2020aba50e3c
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-0eb87d97-474c-407d-9045-803f86d34776
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-27f3a186-99c1-408d-b9c3-9903f59fee20
+	a obo:BFO_0000015 ;
+	obo:BFO_0000070 kb:IndependentContinuant-072eefc2-070a-49e9-b363-a6d5559f18c4 ;
+	.
+
+kb:Process-2c2fd4f6-9d93-41f6-8b1d-c1dec56de7f0
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-2db58c47-f87f-4dd3-891d-190697e76d23
+	a obo:BFO_0000015 ;
+	obo:BFO_0000169 kb:SpecificallyDependentContinuant-e1db2471-7ae4-41c7-9f9e-5183aa882549 ;
+	.
+
+kb:Process-51411971-93b5-45ab-8943-d1af5efe184b
+	a obo:BFO_0000015 ;
+	obo:BFO_0000125 kb:SpecificallyDependentContinuant-f7ba58b7-5ff3-4d8f-8ede-2031642d14ad ;
+	.
+
+kb:Process-6d0e08c6-c889-4110-959b-7840ed5da05a
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-70318cf1-3faa-44f5-8174-856940ab94ea
+	a obo:BFO_0000015 ;
+	obo:BFO_0000169 kb:IndependentContinuant-3f5eb479-8be4-4eda-8814-47e2e60f0acd ;
+	.
+
+kb:Process-73023ce6-1742-4b98-b5f6-0e49ff4616bd
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-7c9be316-fcfc-4766-a761-e9d9a9af9d57
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-91bbdb72-e830-46e2-b466-93a50b360977
+	a obo:BFO_0000015 ;
+	.
+
+kb:Process-9d1473fc-cfb4-4627-a375-0dbe8e216703
+	a obo:BFO_0000015 ;
+	obo:BFO_0000125 kb:Process-00366314-fd6f-4a6a-aa06-2020aba50e3c ;
+	.
+
+kb:Process-bcbad6ba-b1cc-4078-84b0-8d5ede5aef5d
+	a obo:BFO_0000015 ;
+	obo:BFO_0000070 kb:Process-da2cb9bb-ff5e-4397-ae7c-b9313bae4396 ;
+	.
+
+kb:Process-cea4b811-a949-42b8-a099-da7a9adc77cb
+	a obo:BFO_0000015 ;
+	obo:BFO_0000169 kb:Process-6d0e08c6-c889-4110-959b-7840ed5da05a ;
+	.
+
+kb:Process-d7cc5e39-47b7-490a-bae8-bc386f65d872
+	a obo:BFO_0000015 ;
+	obo:BFO_0000070 kb:SpecificallyDependentContinuant-639e7a5a-7897-43d4-a42d-ea3ccb37ac68 ;
+	.
+
+kb:Process-da2cb9bb-ff5e-4397-ae7c-b9313bae4396
+	a obo:BFO_0000015 ;
+	.
+
+kb:ProcessBoundary-808abb31-d905-4ecf-a7e7-808e800dac10
+	a obo:BFO_0000035 ;
+	.
+
+kb:Quality-498b2ad8-7a65-4f00-b4ff-3058131c9a61
+	a obo:BFO_0000019 ;
+	.
+
+kb:Quality-556a442a-c8c8-446d-ae52-faa05c2a68c7
+	a obo:BFO_0000019 ;
+	obo:BFO_0000080 kb:Thing-3d3ea199-8f30-4ef1-9005-b9131a97edf0 ;
+	.
+
+kb:RealizableEntity-32a470e8-9146-4b33-b547-80c113bbc6f2
+	a obo:BFO_0000017 ;
+	.
+
+kb:SpatialRegion-1fb13ea5-9141-4f6e-9b8e-b828e4682d31
+	a obo:BFO_0000006 ;
+	.
+
+kb:SpatialRegion-fb6d084b-7772-4eda-8141-657161630493
+	a obo:BFO_0000006 ;
+	.
+
+kb:SpatiotemporalRegion-0536eb22-268a-4826-b3ab-f22703c6ec08
+	a obo:BFO_0000011 ;
+	.
+
+kb:SpatiotemporalRegion-4bf92957-790f-45d5-9829-962a8886541e
+	a obo:BFO_0000011 ;
+	obo:BFO_0000126 kb:Occurrent-9c80a19c-ce6a-409a-9dec-312d910162ce ;
+	.
+
+kb:SpatiotemporalRegion-502c803b-94f9-4af1-86b6-d7509c4e2e8b
+	a obo:BFO_0000011 ;
+	obo:BFO_0000151 kb:SpatialRegion-1fb13ea5-9141-4f6e-9b8e-b828e4682d31 ;
+	.
+
+kb:SpecificallyDependentContinuant-1cacc9d1-2a78-48a4-9760-a6e88f6b6eaa
+	a obo:BFO_0000020 ;
+	obo:BFO_0000169 kb:IndependentContinuant-2469474a-b711-403f-b979-1716c884501c ;
+	.
+
+kb:SpecificallyDependentContinuant-2411e364-fd39-4c8a-a30b-8f9216f082bd
+	a obo:BFO_0000020 ;
+	obo:BFO_0000125 kb:Process-2c2fd4f6-9d93-41f6-8b1d-c1dec56de7f0 ;
+	.
+
+kb:SpecificallyDependentContinuant-30b45c87-81ab-475c-be03-993f4c10115a
+	a obo:BFO_0000020 ;
+	obo:BFO_0000169 kb:SpecificallyDependentContinuant-ea707714-7ba9-4e65-8a83-49e3996acbae ;
+	.
+
+kb:SpecificallyDependentContinuant-551f97d8-c93e-4427-bcbd-c98aae370b0f
+	a obo:BFO_0000020 ;
+	obo:BFO_0000169 kb:Process-0eb87d97-474c-407d-9045-803f86d34776 ;
+	.
+
+kb:SpecificallyDependentContinuant-639e7a5a-7897-43d4-a42d-ea3ccb37ac68
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-90556cfd-cc49-4b46-b3bd-02f37edb6822
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-a57999f8-a083-4bb5-8367-0789424109e0
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-d5796153-5244-4ec5-b65b-1703609ef2ba
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-d8f7cde0-89cb-4464-a540-745d550541a8
+	a obo:BFO_0000020 ;
+	obo:BFO_0000070 kb:Process-73023ce6-1742-4b98-b5f6-0e49ff4616bd ;
+	.
+
+kb:SpecificallyDependentContinuant-e1a873ac-7c75-4e89-b207-ad24a2bfeeb4
+	a obo:BFO_0000020 ;
+	obo:BFO_0000052 kb:IndependentContinuant-0ca88951-7544-4a58-8136-37bf2ab8d63e ;
+	.
+
+kb:SpecificallyDependentContinuant-e1db2471-7ae4-41c7-9f9e-5183aa882549
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-e1edcdc7-185e-41c9-ac76-cfbba5691a02
+	a obo:BFO_0000020 ;
+	obo:BFO_0000070 kb:SpecificallyDependentContinuant-d5796153-5244-4ec5-b65b-1703609ef2ba ;
+	.
+
+kb:SpecificallyDependentContinuant-ea707714-7ba9-4e65-8a83-49e3996acbae
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-efb37fc8-7db0-4d13-95df-bdb82d26d1b7
+	a obo:BFO_0000020 ;
+	obo:BFO_0000125 kb:SpecificallyDependentContinuant-90556cfd-cc49-4b46-b3bd-02f37edb6822 ;
+	.
+
+kb:SpecificallyDependentContinuant-f7ba58b7-5ff3-4d8f-8ede-2031642d14ad
+	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-fc7149fe-b5ed-4e66-9b43-9481e7dc5b2c
+	a obo:BFO_0000020 ;
+	obo:BFO_0000070 kb:IndependentContinuant-161597e8-e81f-48f7-89ae-35cbe7028398 ;
+	.
+
+kb:TemporalRegion-860568c1-203f-4762-a24b-c975c43cf89a
+	a obo:BFO_0000008 ;
+	.
+
+kb:Thing-3d3ea199-8f30-4ef1-9005-b9131a97edf0
+	a owl:Thing ;
+	.
+
+kb:Thing-4d4f4f12-20f8-44d1-981a-d9ec5f17d2c2
+	a owl:Thing ;
+	obo:BFO_0000177 kb:Thing-c30ab77b-df06-4c2e-9578-b6a9378107ca ;
+	.
+
+kb:Thing-889ae3c0-3511-433b-98e9-c79122d3ec8f
+	a owl:Thing ;
+	obo:BFO_0000168 kb:Thing-e27323e9-2e82-481b-bd0d-5b9035343639 ;
+	.
+
+kb:Thing-9f584460-9aef-4d23-805d-f3d93273c950
+	a owl:Thing ;
+	obo:BFO_0000159 kb:Quality-498b2ad8-7a65-4f00-b4ff-3058131c9a61 ;
+	.
+
+kb:Thing-c30ab77b-df06-4c2e-9578-b6a9378107ca
+	a owl:Thing ;
+	.
+
+kb:Thing-c664e50e-b307-4f6a-96dd-15db25b84dea
+	a owl:Thing ;
+	obo:BFO_0000110 kb:Thing-ccc428f2-6fe9-45b7-b37f-3de8e10691e6 ;
+	.
+
+kb:Thing-ccc428f2-6fe9-45b7-b37f-3de8e10691e6
+	a owl:Thing ;
+	.
+
+kb:Thing-e27323e9-2e82-481b-bd0d-5b9035343639
+	a owl:Thing ;
+	.
+
+kb:ThreeDimensionalSpatialRegion-854b00e5-957a-409b-9d96-e8d8d19ff938
+	a obo:BFO_0000028 ;
+	.
+
+kb:ZeroDimensionalTemporalRegion-b0d91a58-dc64-4dc0-9b3a-ed6a54da84d7
+	a obo:BFO_0000148 ;
 	.
 

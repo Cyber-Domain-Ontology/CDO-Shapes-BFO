@@ -1,3 +1,7 @@
+[submodule "dependencies/BFO"]
+	path = dependencies/BFO
+	url = https://github.com/BFO-ontology/BFO.git
+	branch = master
 [submodule "dependencies/UCO"]
 	path = dependencies/UCO
 	url = https://github.com/ucoProject/UCO.git

@@ -98,12 +98,26 @@ kb:IndependentContinuant-2469474a-b711-403f-b979-1716c884501c
 	a obo:BFO_0000004 ;
 	.
 
+kb:IndependentContinuant-298089ba-d911-4473-98f1-60776ef47d50
+	a obo:BFO_0000004 ;
+	obo:BFO_0000168 kb:Process-633c5252-0294-4511-a6f9-a83ec3a5f0bd ;
+	.
+
 kb:IndependentContinuant-3a9a69f6-0662-4217-a031-6441adf281f2
 	a obo:BFO_0000004 ;
 	obo:BFO_0000101 kb:GenericallyDependentContinuant-e86c1e56-9692-496e-9ffe-657a7de57c06 ;
 	.
 
 kb:IndependentContinuant-3f5eb479-8be4-4eda-8814-47e2e60f0acd
+	a obo:BFO_0000004 ;
+	.
+
+kb:IndependentContinuant-43185f0c-9db1-42f5-b3f9-3febbc022780
+	a obo:BFO_0000004 ;
+	obo:BFO_0000159 kb:Quality-498b2ad8-7a65-4f00-b4ff-3058131c9a61 ;
+	.
+
+kb:IndependentContinuant-688b1328-afa5-4ccc-9a26-b5fc45c2d743
 	a obo:BFO_0000004 ;
 	.
 
@@ -192,6 +206,15 @@ kb:Process-0eb87d97-474c-407d-9045-803f86d34776
 	a obo:BFO_0000015 ;
 	.
 
+kb:Process-1836769a-bf4a-4be3-8d0c-4535f25653b1
+	a obo:BFO_0000015 ;
+	obo:BFO_0000168 kb:Process-d9cfceda-d853-43f8-a9a9-00b1c5bd38c9 ;
+	.
+
+kb:Process-25651bc9-7d13-49cb-a00d-c860aef39912
+	a obo:BFO_0000015 ;
+	.
+
 kb:Process-27f3a186-99c1-408d-b9c3-9903f59fee20
 	a obo:BFO_0000015 ;
 	obo:BFO_0000070 kb:IndependentContinuant-072eefc2-070a-49e9-b363-a6d5559f18c4 ;
@@ -209,6 +232,10 @@ kb:Process-2db58c47-f87f-4dd3-891d-190697e76d23
 kb:Process-51411971-93b5-45ab-8943-d1af5efe184b
 	a obo:BFO_0000015 ;
 	obo:BFO_0000125 kb:SpecificallyDependentContinuant-f7ba58b7-5ff3-4d8f-8ede-2031642d14ad ;
+	.
+
+kb:Process-633c5252-0294-4511-a6f9-a83ec3a5f0bd
+	a obo:BFO_0000015 ;
 	.
 
 kb:Process-6d0e08c6-c889-4110-959b-7840ed5da05a
@@ -232,6 +259,11 @@ kb:Process-91bbdb72-e830-46e2-b466-93a50b360977
 	a obo:BFO_0000015 ;
 	.
 
+kb:Process-96ebd25c-0215-4aa5-9dab-919a4ae432c9
+	a obo:BFO_0000015 ;
+	obo:BFO_0000168 kb:SpecificallyDependentContinuant-3fa06108-e752-4e3f-bf5a-906837da291f ;
+	.
+
 kb:Process-9d1473fc-cfb4-4627-a375-0dbe8e216703
 	a obo:BFO_0000015 ;
 	obo:BFO_0000125 kb:Process-00366314-fd6f-4a6a-aa06-2020aba50e3c ;
@@ -252,6 +284,10 @@ kb:Process-d7cc5e39-47b7-490a-bae8-bc386f65d872
 	obo:BFO_0000070 kb:SpecificallyDependentContinuant-639e7a5a-7897-43d4-a42d-ea3ccb37ac68 ;
 	.
 
+kb:Process-d9cfceda-d853-43f8-a9a9-00b1c5bd38c9
+	a obo:BFO_0000015 ;
+	.
+
 kb:Process-da2cb9bb-ff5e-4397-ae7c-b9313bae4396
 	a obo:BFO_0000015 ;
 	.
@@ -260,13 +296,17 @@ kb:ProcessBoundary-808abb31-d905-4ecf-a7e7-808e800dac10
 	a obo:BFO_0000035 ;
 	.
 
+kb:ProcessProfile
+	a obo:BFO_0000144 ;
+	.
+
 kb:Quality-498b2ad8-7a65-4f00-b4ff-3058131c9a61
 	a obo:BFO_0000019 ;
 	.
 
 kb:Quality-556a442a-c8c8-446d-ae52-faa05c2a68c7
 	a obo:BFO_0000019 ;
-	obo:BFO_0000080 kb:Thing-3d3ea199-8f30-4ef1-9005-b9131a97edf0 ;
+	obo:BFO_0000080 kb:IndependentContinuant-688b1328-afa5-4ccc-9a26-b5fc45c2d743 ;
 	.
 
 kb:RealizableEntity-32a470e8-9146-4b33-b547-80c113bbc6f2
@@ -310,6 +350,10 @@ kb:SpecificallyDependentContinuant-30b45c87-81ab-475c-be03-993f4c10115a
 	obo:BFO_0000169 kb:SpecificallyDependentContinuant-ea707714-7ba9-4e65-8a83-49e3996acbae ;
 	.
 
+kb:SpecificallyDependentContinuant-3fa06108-e752-4e3f-bf5a-906837da291f
+	a obo:BFO_0000020 ;
+	.
+
 kb:SpecificallyDependentContinuant-551f97d8-c93e-4427-bcbd-c98aae370b0f
 	a obo:BFO_0000020 ;
 	obo:BFO_0000169 kb:Process-0eb87d97-474c-407d-9045-803f86d34776 ;
@@ -317,6 +361,11 @@ kb:SpecificallyDependentContinuant-551f97d8-c93e-4427-bcbd-c98aae370b0f
 
 kb:SpecificallyDependentContinuant-639e7a5a-7897-43d4-a42d-ea3ccb37ac68
 	a obo:BFO_0000020 ;
+	.
+
+kb:SpecificallyDependentContinuant-7c844979-f269-4286-a61b-c1556f5e9009
+	a obo:BFO_0000020 ;
+	obo:BFO_0000168 kb:Process-25651bc9-7d13-49cb-a00d-c860aef39912 ;
 	.
 
 kb:SpecificallyDependentContinuant-90556cfd-cc49-4b46-b3bd-02f37edb6822
@@ -331,9 +380,18 @@ kb:SpecificallyDependentContinuant-d5796153-5244-4ec5-b65b-1703609ef2ba
 	a obo:BFO_0000020 ;
 	.
 
+kb:SpecificallyDependentContinuant-d8ae97aa-cb29-4085-959b-d4079b1ab7f9
+	a obo:BFO_0000020 ;
+	obo:BFO_0000168 kb:SpecificallyDependentContinuant-dc5ecfc0-8df9-45ba-b0cc-6fdc55e5ecf3 ;
+	.
+
 kb:SpecificallyDependentContinuant-d8f7cde0-89cb-4464-a540-745d550541a8
 	a obo:BFO_0000020 ;
 	obo:BFO_0000070 kb:Process-73023ce6-1742-4b98-b5f6-0e49ff4616bd ;
+	.
+
+kb:SpecificallyDependentContinuant-dc5ecfc0-8df9-45ba-b0cc-6fdc55e5ecf3
+	a obo:BFO_0000020 ;
 	.
 
 kb:SpecificallyDependentContinuant-e1a873ac-7c75-4e89-b207-ad24a2bfeeb4
@@ -372,23 +430,9 @@ kb:TemporalRegion-860568c1-203f-4762-a24b-c975c43cf89a
 	a obo:BFO_0000008 ;
 	.
 
-kb:Thing-3d3ea199-8f30-4ef1-9005-b9131a97edf0
-	a owl:Thing ;
-	.
-
 kb:Thing-4d4f4f12-20f8-44d1-981a-d9ec5f17d2c2
 	a owl:Thing ;
 	obo:BFO_0000177 kb:Thing-c30ab77b-df06-4c2e-9578-b6a9378107ca ;
-	.
-
-kb:Thing-889ae3c0-3511-433b-98e9-c79122d3ec8f
-	a owl:Thing ;
-	obo:BFO_0000168 kb:Thing-e27323e9-2e82-481b-bd0d-5b9035343639 ;
-	.
-
-kb:Thing-9f584460-9aef-4d23-805d-f3d93273c950
-	a owl:Thing ;
-	obo:BFO_0000159 kb:Quality-498b2ad8-7a65-4f00-b4ff-3058131c9a61 ;
 	.
 
 kb:Thing-c30ab77b-df06-4c2e-9578-b6a9378107ca
@@ -401,10 +445,6 @@ kb:Thing-c664e50e-b307-4f6a-96dd-15db25b84dea
 	.
 
 kb:Thing-ccc428f2-6fe9-45b7-b37f-3de8e10691e6
-	a owl:Thing ;
-	.
-
-kb:Thing-e27323e9-2e82-481b-bd0d-5b9035343639
 	a owl:Thing ;
 	.
 

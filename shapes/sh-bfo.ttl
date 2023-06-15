@@ -248,6 +248,30 @@ sh-bfo:BFO_0000009-disjointWith-BFO_0000028-shape
 	sh:targetClass obo:BFO_0000009 ;
 	.
 
+sh-bfo:BFO_0000009-shape
+	a sh:NodeShape ;
+	rdfs:comment "two-dimensional spatial region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000028 ;
+			] ;
+			sh:path obo:BFO_0000178 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000028 ;
+			] ;
+			sh:path obo:BFO_0000187 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000009 ;
+	.
+
 sh-bfo:BFO_0000011-disjointWith-BFO_0000015-shape
 	a sh:NodeShape ;
 	sh:message "obo:BFO_0000011 (spatiotemporal region) and obo:BFO_0000015 (process) are disjoint classes."@en ;
@@ -333,6 +357,30 @@ sh-bfo:BFO_0000016-disjointWith-BFO_0000023-shape
 	sh:targetClass obo:BFO_0000016 ;
 	.
 
+sh-bfo:BFO_0000016-shape
+	a sh:NodeShape ;
+	rdfs:comment "disposition"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000023 ;
+			] ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000023 ;
+			] ;
+			sh:path obo:BFO_0000186 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000016 ;
+	.
+
 sh-bfo:BFO_0000017-disjointWith-BFO_0000019-shape
 	a sh:NodeShape ;
 	sh:message "obo:BFO_0000017 (realizable entity) and obo:BFO_0000019 (quality) are disjoint classes."@en ;
@@ -384,6 +432,56 @@ sh-bfo:BFO_0000018-disjointWith-BFO_0000028-shape
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000028 ;
 	] ;
+	sh:targetClass obo:BFO_0000018 ;
+	.
+
+sh-bfo:BFO_0000018-shape
+	a sh:NodeShape ;
+	rdfs:comment "zero-dimensional spatial region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000009 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000026 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000028 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000178 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000009 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000026 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000028 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000187 ;
+		]
+		;
 	sh:targetClass obo:BFO_0000018 ;
 	.
 
@@ -478,6 +576,48 @@ sh-bfo:BFO_0000026-disjointWith-BFO_0000028-shape
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000028 ;
 	] ;
+	sh:targetClass obo:BFO_0000026 ;
+	.
+
+sh-bfo:BFO_0000026-shape
+	a sh:NodeShape ;
+	rdfs:comment "one-dimensional spatial region"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000009 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000028 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000178 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:or (
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000009 ;
+					]
+					[
+						a sh:NodeShape ;
+						sh:class obo:BFO_0000028 ;
+					]
+				) ;
+			] ;
+			sh:path obo:BFO_0000187 ;
+		]
+		;
 	sh:targetClass obo:BFO_0000026 ;
 	.
 
@@ -963,6 +1103,30 @@ sh-bfo:BFO_0000142-disjointWith-BFO_0000147-shape
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000147 ;
 	] ;
+	sh:targetClass obo:BFO_0000142 ;
+	.
+
+sh-bfo:BFO_0000142-shape
+	a sh:NodeShape ;
+	rdfs:comment "one-dimensional continuant fiat boundary"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000146 ;
+			] ;
+			sh:path obo:BFO_0000178 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000146 ;
+			] ;
+			sh:path obo:BFO_0000187 ;
+		]
+		;
 	sh:targetClass obo:BFO_0000142 ;
 	.
 

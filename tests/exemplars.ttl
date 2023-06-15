@@ -59,6 +59,10 @@ kb:Continuant-ffbdff5c-62ad-4a75-9729-c3aa292435d3
 	a obo:BFO_0000002 ;
 	.
 
+kb:Disposition-1ff5e290-724a-4385-b268-32ad49bc8b4f
+	a obo:BFO_0000016 ;
+	.
+
 kb:Entity-5d6597d6-3a2c-42cb-9ca2-d853b790aab3
 	a obo:BFO_0000001 ;
 	obo:BFO_0000108 kb:TemporalRegion-860568c1-203f-4762-a24b-c975c43cf89a ;
@@ -198,6 +202,18 @@ kb:Occurrent-ff0994aa-c9c7-4422-83fe-364924aabd18
 	a obo:BFO_0000003 ;
 	.
 
+kb:OneDimensionalContinuantFiatBoundary-6538ea95-538e-4a12-bd0d-999535a4a878
+	a obo:BFO_0000142 ;
+	.
+
+kb:OneDimensionalSpatialRegion-559ec53b-45aa-4370-907d-6175cae8b570
+	a obo:BFO_0000026 ;
+	.
+
+kb:OneDimensionalTemporalRegion-7ca3f761-e4f7-4500-9442-13df3054f03e
+	a obo:BFO_0000038 ;
+	.
+
 kb:Process-00366314-fd6f-4a6a-aa06-2020aba50e3c
 	a obo:BFO_0000015 ;
 	.
@@ -311,6 +327,10 @@ kb:Quality-556a442a-c8c8-446d-ae52-faa05c2a68c7
 
 kb:RealizableEntity-32a470e8-9146-4b33-b547-80c113bbc6f2
 	a obo:BFO_0000017 ;
+	.
+
+kb:Site-d7c3a9aa-c3a6-4214-b568-88537feaa618
+	a obo:BFO_0000029 ;
 	.
 
 kb:SpatialRegion-1fb13ea5-9141-4f6e-9b8e-b828e4682d31
@@ -450,6 +470,18 @@ kb:Thing-ccc428f2-6fe9-45b7-b37f-3de8e10691e6
 
 kb:ThreeDimensionalSpatialRegion-854b00e5-957a-409b-9d96-e8d8d19ff938
 	a obo:BFO_0000028 ;
+	.
+
+kb:TwoDimensionalContinuantFiatBoundary-75f6994e-9174-4871-a931-5a4db0eecad9
+	a obo:BFO_0000146 ;
+	.
+
+kb:TwoDimensionalSpatialRegion-99363511-fdbd-45ec-bdab-80853114817a
+	a obo:BFO_0000009 ;
+	.
+
+kb:ZeroDimensionalSpatialRegion-31a7b272-d929-4926-ac91-5f1feea26bae
+	a obo:BFO_0000018 ;
 	.
 
 kb:ZeroDimensionalTemporalRegion-b0d91a58-dc64-4dc0-9b3a-ed6a54da84d7

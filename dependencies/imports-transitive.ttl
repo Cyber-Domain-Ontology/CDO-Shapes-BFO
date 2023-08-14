@@ -8,7 +8,10 @@
 
 obo:bfo.owl
 	a owl:Ontology ;
-	rdfs:comment "This is an early version of BFO version 2 and has not yet been extensively reviewed by the project team members. Please see the project site http://code.google.com/p/bfo/ , the bfo2 owl discussion group http://groups.google.com/group/bfo-owl-devel , the bfo2 discussion group http://groups.google.com/group/bfo-devel, the tracking google doc http://goo.gl/IlrEE, and the current version of the bfo2 reference http://purl.obolibrary.org/obo/bfo/dev/bfo2-reference.docx . This ontology is generated from a specification at http://bfo.googlecode.com/svn/trunk/src/ontology/owl-group/specification/ and with the code that generates the OWL version in http://bfo.googlecode.com/svn/trunk/src/tools/. A very early version of BFO version 2 in CLIF is at http://purl.obolibrary.org/obo/bfo/dev/bfo.clif"@en ;
+	rdfs:comment
+		"NOTE - this file is an unofficial adaptation of the BFO file.  It is only expected to persist until the publication of a new version of BFO incorporating a fix for BFO Issue #233."@en ,
+		"This is an early version of BFO version 2 and has not yet been extensively reviewed by the project team members. Please see the project site http://code.google.com/p/bfo/ , the bfo2 owl discussion group http://groups.google.com/group/bfo-owl-devel , the bfo2 discussion group http://groups.google.com/group/bfo-devel, the tracking google doc http://goo.gl/IlrEE, and the current version of the bfo2 reference http://purl.obolibrary.org/obo/bfo/dev/bfo2-reference.docx . This ontology is generated from a specification at http://bfo.googlecode.com/svn/trunk/src/ontology/owl-group/specification/ and with the code that generates the OWL version in http://bfo.googlecode.com/svn/trunk/src/tools/. A very early version of BFO version 2 in CLIF is at http://purl.obolibrary.org/obo/bfo/dev/bfo.clif"@en
+		;
 	obo:IAO_0000116
 		"BFO 2 Reference: BFO does not claim to be a complete coverage of all entities. It seeks only to provide coverage of those entities studied by empirical science together with those entities which affect or are involved in human activities such as data processing and planning – coverage that is sufficiently broad to provide assistance to those engaged in building domain ontologies for purposes of data annotation [17" ,
 		"BFO 2 Reference: BFO’s treatment of continuants and occurrents – as also its treatment of regions, rests on a dichotomy between space and time, and on the view that there are two perspectives on reality – earlier called the ‘SNAP’ and ‘SPAN’ perspectives, both of which are essential to the non-reductionist representation of reality as we understand it from the best available science [30" ,
@@ -54,9 +57,11 @@ obo:bfo.owl
 		<http://groups.google.com/group/bfo-devel> ,
 		<http://groups.google.com/group/bfo-discuss> ,
 		<http://groups.google.com/group/bfo-owl-devel> ,
-		<http://purl.obolibrary.org/obo/bfo/dev/owl>
+		<http://purl.obolibrary.org/obo/bfo/dev/owl> ,
+		<https://github.com/BFO-ontology/BFO/issues/233>
 		;
-	owl:versionIRI <http://purl.obolibrary.org/obo/bfo/2014-05-03/bfo.owl> ;
+	owl:incompatibleWith <http://purl.obolibrary.org/obo/bfo/2014-05-03/bfo.owl> ;
+	owl:versionIRI <https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl> ;
 	foaf:homepage
 		<http://code.google.com/p/bfo/> ,
 		<http://ifomis.org/bfo>
@@ -3164,7 +3169,7 @@ rdfs:seeAlso
 	.
 
 foaf:homepage
-	a owl:AnnotationProperty ;
+	a owl:ObjectProperty ;
 	.
 
 []

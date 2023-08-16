@@ -5,12 +5,12 @@
 #
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
-# of their official duties. Pursuant to title 17 Section 105 of the
-# United States Code this software is not subject to copyright
-# protection and is in the public domain. NIST assumes no
-# responsibility whatsoever for its use by other parties, and makes
-# no guarantees, expressed or implied, about its quality,
-# reliability, or any other characteristic.
+# of their official duties. Pursuant to Title 17 Section 105 of the
+# United States Code, this software is not subject to copyright
+# protection within the United States. NIST assumes no responsibility
+# whatsoever for its use by other parties, and makes no guarantees,
+# expressed or implied, about its quality, reliability, or any other
+# characteristic.
 #
 # We would appreciate acknowledgement if the software is used.
 
@@ -50,11 +50,11 @@ catalog-v001.xml: \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/etc/domain_directories.tsv \
   $(top_srcdir)/etc/dependency_files.tsv \
-  $(uco_srcdir)/src/create-catalog-v001.xml.py \
+  $(top_srcdir)/src/create-catalog-v001.xml.py \
   imports-transitive.ttl
 	rm -f _$@
 	source $(top_srcdir)/venv/bin/activate \
-	  && python3 $(uco_srcdir)/src/create-catalog-v001.xml.py \
+	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
 	    _$@ \
 	    $(top_srcdir)/etc/domain_directories.tsv \
 	    $(top_srcdir)/etc/dependency_files.tsv \

@@ -1,4 +1,4 @@
-# imports: https://ontology.unifiedcyberontology.org/owl/1.2.0
+# imports: https://ontology.unifiedcyberontology.org/owl/1.3.0
 # imports: https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl
 
 @prefix obo: <http://purl.obolibrary.org/obo/> .
@@ -14,7 +14,7 @@
 	a owl:Ontology ;
 	rdfs:comment "These shapes are defined in reference to the 2014-05-03 version of BFO, due to 'The incorporation of core relations have been postponed to version BFO 2.1 OWL'."@en ;
 	owl:imports
-		uco-owl:1.2.0 ,
+		uco-owl:1.3.0 ,
 		<https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl>
 		;
 	.

@@ -31,7 +31,7 @@ $(RDF_TOOLKIT_JAR):
 	@test -r $@
 
 BFO.ttl: \
-  BFO/releases/2014-05-03/owl-group/bfo.owl \
+  BFO-2020/src/owl/bfo-core.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
 	source $(top_srcdir)/venv/bin/activate \
@@ -41,7 +41,7 @@ BFO.ttl: \
 	java -jar $(RDF_TOOLKIT_JAR) \
 	  --inline-blank-nodes \
 	  --source $< \
-	  --source-format rdf-xml \
+	  --source-format turtle \
 	  --target _$@ \
 	  --target-format turtle
 	mv _$@ $@

@@ -1,5 +1,5 @@
+# imports: http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl
 # imports: https://ontology.unifiedcyberontology.org/owl/1.3.0
-# imports: https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl
 
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -12,10 +12,9 @@
 
 <http://example.org/shapes/bfo>
 	a owl:Ontology ;
-	rdfs:comment "These shapes are defined in reference to the 2014-05-03 version of BFO, due to 'The incorporation of core relations have been postponed to version BFO 2.1 OWL'."@en ;
 	owl:imports
-		uco-owl:1.3.0 ,
-		<https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl>
+		<http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ,
+		uco-owl:1.3.0
 		;
 	.
 
@@ -38,6 +37,11 @@ sh-bfo:BFO_0000002-disjointWith-BFO_0000003-shape
 sh-bfo:BFO_0000002-shape
 	a sh:NodeShape ;
 	rdfs:comment "continuant"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000002 ;
+		sh:path obo:BFO_0000176 ;
+	] ;
 	sh:targetClass obo:BFO_0000002 ;
 	.
 
@@ -45,46 +49,6 @@ sh-bfo:BFO_0000003-shape
 	a sh:NodeShape ;
 	rdfs:comment "occurrent"@en ;
 	sh:targetClass obo:BFO_0000003 ;
-	.
-
-sh-bfo:BFO_0000004-BFO_0000176-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000020 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000031 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000176 ;
-	.
-
-sh-bfo:BFO_0000004-BFO_0000186-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000020 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000031 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000186 ;
 	.
 
 sh-bfo:BFO_0000004-disjointWith-BFO_0000020-shape
@@ -110,15 +74,11 @@ sh-bfo:BFO_0000004-disjointWith-BFO_0000031-shape
 sh-bfo:BFO_0000004-shape
 	a sh:NodeShape ;
 	rdfs:comment "independent continuant"@en ;
-	sh:property
-		sh-bfo:BFO_0000004-BFO_0000176-shape ,
-		sh-bfo:BFO_0000004-BFO_0000186-shape ,
-		[
-			a sh:PropertyShape ;
-			sh:maxCount "0"^^xsd:integer ;
-			sh:path obo:BFO_0000169 ;
-		]
-		;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000004 ;
+		sh:path obo:BFO_0000176 ;
+	] ;
 	sh:targetClass obo:BFO_0000004 ;
 	.
 
@@ -145,28 +105,11 @@ sh-bfo:BFO_0000006-disjointWith-BFO_0000140-shape
 sh-bfo:BFO_0000006-shape
 	a sh:NodeShape ;
 	rdfs:comment "spatial region"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000006 ;
-			sh:path obo:BFO_0000176 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000006 ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000006 ;
-			sh:path obo:BFO_0000186 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000006 ;
-			sh:path obo:BFO_0000187 ;
-		]
-		;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000006 ;
+		sh:path obo:BFO_0000176 ;
+	] ;
 	sh:targetClass obo:BFO_0000006 ;
 	.
 
@@ -207,12 +150,12 @@ sh-bfo:BFO_0000008-shape
 		[
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000008 ;
-			sh:path obo:BFO_0000117 ;
+			sh:path obo:BFO_0000132 ;
 		] ,
 		[
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000008 ;
-			sh:path obo:BFO_0000132 ;
+			sh:path obo:BFO_0000139 ;
 		]
 		;
 	sh:targetClass obo:BFO_0000008 ;
@@ -251,24 +194,24 @@ sh-bfo:BFO_0000009-disjointWith-BFO_0000028-shape
 sh-bfo:BFO_0000009-shape
 	a sh:NodeShape ;
 	rdfs:comment "two-dimensional spatial region"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
+	sh:property [
+		a sh:PropertyShape ;
+		sh:or (
+			[
 				a sh:NodeShape ;
-				sh:class obo:BFO_0000028 ;
-			] ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
+				sh:class obo:BFO_0000009 ;
+			]
+			[
 				a sh:NodeShape ;
-				sh:class obo:BFO_0000028 ;
-			] ;
-			sh:path obo:BFO_0000187 ;
-		]
-		;
+				sh:class obo:BFO_0000018 ;
+			]
+			[
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000026 ;
+			]
+		) ;
+		sh:path obo:BFO_0000178 ;
+	] ;
 	sh:targetClass obo:BFO_0000009 ;
 	.
 
@@ -299,12 +242,12 @@ sh-bfo:BFO_0000011-shape
 		[
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000011 ;
-			sh:path obo:BFO_0000117 ;
+			sh:path obo:BFO_0000132 ;
 		] ,
 		[
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000011 ;
-			sh:path obo:BFO_0000132 ;
+			sh:path obo:BFO_0000139 ;
 		]
 		;
 	sh:targetClass obo:BFO_0000011 ;
@@ -328,6 +271,11 @@ sh-bfo:BFO_0000015-shape
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000015 ;
 			sh:path obo:BFO_0000132 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000015 ;
+			sh:path obo:BFO_0000139 ;
 		] ,
 		[
 			a sh:PropertyShape ;
@@ -360,24 +308,6 @@ sh-bfo:BFO_0000016-disjointWith-BFO_0000023-shape
 sh-bfo:BFO_0000016-shape
 	a sh:NodeShape ;
 	rdfs:comment "disposition"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000023 ;
-			] ;
-			sh:path obo:BFO_0000176 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000023 ;
-			] ;
-			sh:path obo:BFO_0000186 ;
-		]
-		;
 	sh:targetClass obo:BFO_0000016 ;
 	.
 
@@ -394,24 +324,6 @@ sh-bfo:BFO_0000017-disjointWith-BFO_0000019-shape
 sh-bfo:BFO_0000017-shape
 	a sh:NodeShape ;
 	rdfs:comment "realizable entity"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000019 ;
-			] ;
-			sh:path obo:BFO_0000176 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000019 ;
-			] ;
-			sh:path obo:BFO_0000186 ;
-		]
-		;
 	sh:targetClass obo:BFO_0000017 ;
 	.
 
@@ -438,115 +350,18 @@ sh-bfo:BFO_0000018-disjointWith-BFO_0000028-shape
 sh-bfo:BFO_0000018-shape
 	a sh:NodeShape ;
 	rdfs:comment "zero-dimensional spatial region"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:or (
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000009 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000026 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000028 ;
-					]
-				) ;
-			] ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:or (
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000009 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000026 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000028 ;
-					]
-				) ;
-			] ;
-			sh:path obo:BFO_0000187 ;
-		]
-		;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000018 ;
+		sh:path obo:BFO_0000178 ;
+	] ;
 	sh:targetClass obo:BFO_0000018 ;
 	.
 
 sh-bfo:BFO_0000019-shape
 	a sh:NodeShape ;
 	rdfs:comment "quality"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000017 ;
-			] ;
-			sh:path obo:BFO_0000176 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000017 ;
-			] ;
-			sh:path obo:BFO_0000186 ;
-		]
-		;
 	sh:targetClass obo:BFO_0000019 ;
-	.
-
-sh-bfo:BFO_0000020-BFO_0000176-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000004 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000031 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000176 ;
-	.
-
-sh-bfo:BFO_0000020-BFO_0000186-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000004 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000031 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000186 ;
 	.
 
 sh-bfo:BFO_0000020-disjointWith-BFO_0000031-shape
@@ -562,11 +377,19 @@ sh-bfo:BFO_0000020-disjointWith-BFO_0000031-shape
 sh-bfo:BFO_0000020-shape
 	a sh:NodeShape ;
 	rdfs:comment "specifically dependent continuant"@en ;
-	sh:property
-		sh-bfo:BFO_0000020-BFO_0000176-shape ,
-		sh-bfo:BFO_0000020-BFO_0000186-shape
-		;
 	sh:targetClass obo:BFO_0000020 ;
+	.
+
+sh-bfo:BFO_0000023-shape
+	a sh:NodeShape ;
+	rdfs:comment "role"@en ;
+	sh:targetClass obo:BFO_0000023 ;
+	.
+
+sh-bfo:BFO_0000024-shape
+	a sh:NodeShape ;
+	rdfs:comment "fiat object part"@en ;
+	sh:targetClass obo:BFO_0000023 ;
 	.
 
 sh-bfo:BFO_0000026-disjointWith-BFO_0000028-shape
@@ -582,48 +405,37 @@ sh-bfo:BFO_0000026-disjointWith-BFO_0000028-shape
 sh-bfo:BFO_0000026-shape
 	a sh:NodeShape ;
 	rdfs:comment "one-dimensional spatial region"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
+	sh:property [
+		a sh:PropertyShape ;
+		sh:or (
+			[
 				a sh:NodeShape ;
-				sh:or (
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000009 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000028 ;
-					]
-				) ;
-			] ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
+				sh:class obo:BFO_0000018 ;
+			]
+			[
 				a sh:NodeShape ;
-				sh:or (
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000009 ;
-					]
-					[
-						a sh:NodeShape ;
-						sh:class obo:BFO_0000028 ;
-					]
-				) ;
-			] ;
-			sh:path obo:BFO_0000187 ;
-		]
-		;
+				sh:class obo:BFO_0000026 ;
+			]
+		) ;
+		sh:path obo:BFO_0000178 ;
+	] ;
 	sh:targetClass obo:BFO_0000026 ;
+	.
+
+sh-bfo:BFO_0000027-shape
+	a sh:NodeShape ;
+	rdfs:comment "object aggregate"@en ;
+	sh:targetClass obo:BFO_0000027 ;
 	.
 
 sh-bfo:BFO_0000028-shape
 	a sh:NodeShape ;
 	rdfs:comment "three-dimensional spatial region"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000006 ;
+		sh:path obo:BFO_0000178 ;
+	] ;
 	sh:targetClass obo:BFO_0000028 ;
 	.
 
@@ -637,54 +449,63 @@ sh-bfo:BFO_0000029-disjointWith-BFO_0000140-shape
 	sh:targetClass obo:BFO_0000029 ;
 	.
 
-sh-bfo:BFO_0000031-BFO_0000176-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000004 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000020 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000176 ;
+sh-bfo:BFO_0000029-shape
+	a sh:NodeShape ;
+	rdfs:comment "site"@en ;
+	sh:property
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000028 ;
+			sh:path obo:BFO_0000210 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000029 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000040 ;
+				]
+			) ;
+			sh:path obo:BFO_0000176 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000029 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000140 ;
+				]
+			) ;
+			sh:path obo:BFO_0000178 ;
+		]
+		;
+	sh:targetClass obo:BFO_0000029 ;
 	.
 
-sh-bfo:BFO_0000031-BFO_0000186-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:or (
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000004 ;
-			]
-			[
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000020 ;
-			]
-		) ;
-	] ;
-	sh:path obo:BFO_0000186 ;
+sh-bfo:BFO_0000030-shape
+	a sh:NodeShape ;
+	rdfs:comment "object"@en ;
+	sh:targetClass obo:BFO_0000030 ;
 	.
 
 sh-bfo:BFO_0000031-shape
 	a sh:NodeShape ;
 	rdfs:comment "generically dependent continuant"@en ;
-	sh:property
-		sh-bfo:BFO_0000031-BFO_0000176-shape ,
-		sh-bfo:BFO_0000031-BFO_0000186-shape
-		;
 	sh:targetClass obo:BFO_0000031 ;
+	.
+
+sh-bfo:BFO_0000034-shape
+	a sh:NodeShape ;
+	rdfs:comment "function"@en ;
+	sh:targetClass obo:BFO_0000034 ;
 	.
 
 sh-bfo:BFO_0000035-shape
@@ -693,18 +514,13 @@ sh-bfo:BFO_0000035-shape
 	sh:property
 		[
 			a sh:PropertyShape ;
-			sh:class obo:BFO_0000011 ;
-			sh:path obo:BFO_0000130 ;
-		] ,
-		[
-			a sh:PropertyShape ;
 			sh:class obo:BFO_0000035 ;
 			sh:path obo:BFO_0000117 ;
 		] ,
 		[
 			a sh:PropertyShape ;
-			sh:class obo:BFO_0000148 ;
-			sh:path obo:BFO_0000108 ;
+			sh:class obo:BFO_0000035 ;
+			sh:path obo:BFO_0000121 ;
 		] ,
 		[
 			a sh:PropertyShape ;
@@ -719,6 +535,20 @@ sh-bfo:BFO_0000035-shape
 				]
 			) ;
 			sh:path obo:BFO_0000132 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000015 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000035 ;
+				]
+			) ;
+			sh:path obo:BFO_0000139 ;
 		]
 		;
 	sh:targetClass obo:BFO_0000035 ;
@@ -734,38 +564,31 @@ sh-bfo:BFO_0000038-disjointWith-BFO_0000148-shape
 	sh:targetClass obo:BFO_0000038 ;
 	.
 
-sh-bfo:BFO_0000040-BFO_0000178-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:or (
+sh-bfo:BFO_0000038-shape
+	a sh:NodeShape ;
+	rdfs:comment "one-dimensional temporal region"@en ;
+	sh:property
 		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000040 ;
-		]
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000038 ;
+			sh:path obo:BFO_0000139 ;
+		] ,
 		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000141 ;
+			a sh:PropertyShape ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000038 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000148 ;
+				]
+			) ;
+			sh:path obo:BFO_0000121 ;
 		]
-	) ;
-	sh:path obo:BFO_0000178 ;
-	.
-
-sh-bfo:BFO_0000040-BFO_0000187-shape
-	a sh:PropertyShape ;
-	rdfs:comment "Implementation note: This property shape is separated due to a Turtle sorting bug.  This IRI is planned to be removed on resolution of the bug."@en ;
-	rdfs:seeAlso <https://github.com/edmcouncil/rdf-toolkit/issues/49> ;
-	sh:or (
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000040 ;
-		]
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000141 ;
-		]
-	) ;
-	sh:path obo:BFO_0000187 ;
+		;
+	sh:targetClass obo:BFO_0000038 ;
 	.
 
 sh-bfo:BFO_0000040-disjointWith-BFO_0000141-shape
@@ -782,13 +605,6 @@ sh-bfo:BFO_0000040-shape
 	a sh:NodeShape ;
 	rdfs:comment "material entity"@en ;
 	sh:property
-		sh-bfo:BFO_0000040-BFO_0000178-shape ,
-		sh-bfo:BFO_0000040-BFO_0000187-shape ,
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000028 ;
-			sh:path obo:BFO_0000083 ;
-		] ,
 		[
 			a sh:PropertyShape ;
 			sh:class obo:BFO_0000040 ;
@@ -796,62 +612,286 @@ sh-bfo:BFO_0000040-shape
 		] ,
 		[
 			a sh:PropertyShape ;
-			sh:class obo:BFO_0000040 ;
-			sh:path obo:BFO_0000186 ;
+			sh:or (
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000029 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000040 ;
+				]
+				[
+					a sh:NodeShape ;
+					sh:class obo:BFO_0000140 ;
+				]
+			) ;
+			sh:path obo:BFO_0000178 ;
 		]
 		;
 	sh:targetClass obo:BFO_0000040 ;
 	.
 
-sh-bfo:BFO_0000052-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "inheres in at all times"@en ;
-	sh:class obo:BFO_0000004 ;
-	sh:not [
-		a sh:NodeShape ;
-		sh:class obo:BFO_0000006 ;
-	] ;
-	sh:targetObjectsOf obo:BFO_0000052 ;
-	.
-
 sh-bfo:BFO_0000052-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "inheres in at all times"@en ;
-	sh:class obo:BFO_0000020 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000052 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000052 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000052 ;
 	.
 
-sh-bfo:BFO_0000070-objects-shape
+sh-bfo:BFO_0000054-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has realization"@en ;
+	sh:class obo:BFO_0000015 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000054 ;
+	.
+
+sh-bfo:BFO_0000054-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has realization"@en ;
+	sh:class obo:BFO_0000017 ;
+	sh:targetSubjectsOf obo:BFO_0000054 ;
+	.
+
+sh-bfo:BFO_0000055-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "realizes"@en ;
+	sh:class obo:BFO_0000017 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000055 ;
+	.
+
+sh-bfo:BFO_0000055-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "realizes"@en ;
+	sh:class obo:BFO_0000015 ;
+	sh:targetSubjectsOf obo:BFO_0000055 ;
+	.
+
+sh-bfo:BFO_0000056-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "participates in"@en ;
+	sh:class obo:BFO_0000015 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000056 ;
+	.
+
+sh-bfo:BFO_0000056-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "participates in"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000031 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000004 ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000006 ;
+			] ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000056 ;
+	.
+
+sh-bfo:BFO_0000057-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has participant"@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000031 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000004 ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000006 ;
+			] ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000057 ;
+	.
+
+sh-bfo:BFO_0000057-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has participant"@en ;
+	sh:class obo:BFO_0000015 ;
+	sh:targetSubjectsOf obo:BFO_0000057 ;
+	.
+
+sh-bfo:BFO_0000058-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "is concretized by"@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000058 ;
+	.
+
+sh-bfo:BFO_0000058-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "is concretized by"@en ;
+	sh:class obo:BFO_0000031 ;
+	sh:targetSubjectsOf obo:BFO_0000058 ;
+	.
+
+sh-bfo:BFO_0000059-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "concretizes"@en ;
+	sh:class obo:BFO_0000031 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000059 ;
+	.
+
+sh-bfo:BFO_0000059-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "concretizes"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000059 ;
+	.
+
+sh-bfo:BFO_0000062-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "preceded by"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000062 ;
+	.
+
+sh-bfo:BFO_0000062-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "preceded by"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000062 ;
+	.
+
+sh-bfo:BFO_0000063-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "precedes"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000063 ;
+	.
+
+sh-bfo:BFO_0000063-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "precedes"@en ;
+	sh:class obo:BFO_0000003 ;
+	sh:targetSubjectsOf obo:BFO_0000063 ;
+	.
+
+sh-bfo:BFO_0000066-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "occurs in"@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000029 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000040 ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000066 ;
+	.
+
+sh-bfo:BFO_0000066-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "occurs in"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000035 ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000066 ;
+	.
+
+sh-bfo:BFO_0000070-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "specifically depends on at all times"@en ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000070 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000070 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000070 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000070 ;
 	.
 
 sh-bfo:BFO_0000080-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "quality of at all times"@en ;
-	sh:class obo:BFO_0000019 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000080 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000080 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000080 ;
-	.
-
-sh-bfo:BFO_0000083-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "occupies spatial region at some time"@en ;
-	sh:class obo:BFO_0000006 ;
-	sh:targetObjectsOf obo:BFO_0000083 ;
 	.
 
 sh-bfo:BFO_0000083-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "occupies spatial region at some time"@en ;
-	sh:class obo:BFO_0000004 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000083 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000083 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000083 ;
 	.
 
 sh-bfo:BFO_0000084-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "generically depends on at some time"@en ;
+	rdfs:comment "generically depends on"@en ;
 	sh:class obo:BFO_0000004 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:not [
@@ -863,20 +903,20 @@ sh-bfo:BFO_0000084-objects-shape
 
 sh-bfo:BFO_0000084-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "generically depends on at some time"@en ;
+	rdfs:comment "generically depends on"@en ;
 	sh:class obo:BFO_0000031 ;
 	sh:targetSubjectsOf obo:BFO_0000084 ;
 	.
 
 sh-bfo:BFO_0000101-objects-shape
-	rdfs:comment "has generic dependent at some time"@en ;
+	rdfs:comment "is carrier of"@en ;
 	sh:class obo:BFO_0000031 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf obo:BFO_0000101 ;
 	.
 
 sh-bfo:BFO_0000101-subjects-shape
-	rdfs:comment "has generic dependent at some time"@en ;
+	rdfs:comment "is carrier of"@en ;
 	sh:class obo:BFO_0000004 ;
 	sh:not [
 		a sh:NodeShape ;
@@ -889,6 +929,7 @@ sh-bfo:BFO_0000108-objects-shape
 	a sh:NodeShape ;
 	rdfs:comment "exists at"@en ;
 	sh:class obo:BFO_0000008 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf obo:BFO_0000108 ;
 	.
 
@@ -899,11 +940,32 @@ sh-bfo:BFO_0000108-subjects-shape
 	sh:targetSubjectsOf obo:BFO_0000108 ;
 	.
 
-sh-bfo:BFO_0000110-objects-shape
+sh-bfo:BFO_0000110-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "has continuant part at all times"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000110 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000110 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000110 ;
+	.
+
+sh-bfo:BFO_0000115-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has member part"@en ;
+	sh:class obo:BFO_0000040 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000110 ;
+	sh:targetObjectsOf obo:BFO_0000115 ;
+	.
+
+sh-bfo:BFO_0000115-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has member part"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:targetSubjectsOf obo:BFO_0000115 ;
 	.
 
 sh-bfo:BFO_0000117-objects-shape
@@ -921,18 +983,16 @@ sh-bfo:BFO_0000117-subjects-shape
 	sh:targetSubjectsOf obo:BFO_0000117 ;
 	.
 
-sh-bfo:BFO_0000118-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "has proper occurrent part"@en ;
-	sh:class obo:BFO_0000003 ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000118 ;
-	.
-
 sh-bfo:BFO_0000118-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "has proper occurrent part"@en ;
-	sh:class obo:BFO_0000003 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000118 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000118 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000118 ;
 	.
 
@@ -951,80 +1011,100 @@ sh-bfo:BFO_0000121-subjects-shape
 	sh:targetSubjectsOf obo:BFO_0000121 ;
 	.
 
-sh-bfo:BFO_0000125-objects-shape
+sh-bfo:BFO_0000124-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has specific dependent at some time"@en ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:or (
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000015 ;
-		]
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000020 ;
-		]
-	) ;
-	sh:targetObjectsOf obo:BFO_0000125 ;
+	rdfs:comment "location of"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetObjectsOf obo:BFO_0000124 ;
+	.
+
+sh-bfo:BFO_0000124-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "location of"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000124 ;
 	.
 
 sh-bfo:BFO_0000125-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "has specific dependent at some time"@en ;
-	sh:or (
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000015 ;
-		]
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000020 ;
-		]
-		[
-			a sh:NodeShape ;
-			sh:class obo:BFO_0000004 ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000006 ;
-			] ;
-		]
-	) ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000125 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000125 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000125 ;
-	.
-
-sh-bfo:BFO_0000126-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "has spatiotemporal occupant"@en ;
-	sh:class obo:BFO_0000003 ;
-	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000126 ;
 	.
 
 sh-bfo:BFO_0000126-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "has spatiotemporal occupant"@en ;
-	sh:class obo:BFO_0000011 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000126 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000126 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000126 ;
 	.
 
-sh-bfo:BFO_0000130-objects-shape
+sh-bfo:BFO_0000127-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "occupies spatiotemporal region"@en ;
-	sh:class obo:BFO_0000011 ;
+	rdfs:comment "material basis of"@en ;
+	sh:class obo:BFO_0000016 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000130 ;
+	sh:targetObjectsOf obo:BFO_0000127 ;
+	.
+
+sh-bfo:BFO_0000127-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "material basis of"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:targetSubjectsOf obo:BFO_0000127 ;
+	.
+
+sh-bfo:BFO_0000129-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "member part of"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000129 ;
+	.
+
+sh-bfo:BFO_0000129-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "member part of"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:targetSubjectsOf obo:BFO_0000129 ;
 	.
 
 sh-bfo:BFO_0000130-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "occupies spatiotemporal region"@en ;
-	sh:class obo:BFO_0000003 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000130 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000130 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000130 ;
 	.
 
 sh-bfo:BFO_0000132-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "part of occurrent"@en ;
+	rdfs:comment "occurrent part of"@en ;
 	sh:class obo:BFO_0000003 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:targetObjectsOf obo:BFO_0000132 ;
@@ -1032,7 +1112,7 @@ sh-bfo:BFO_0000132-objects-shape
 
 sh-bfo:BFO_0000132-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "part of occurrent"@en ;
+	rdfs:comment "occurrent part of"@en ;
 	sh:class obo:BFO_0000003 ;
 	sh:targetSubjectsOf obo:BFO_0000132 ;
 	.
@@ -1052,43 +1132,33 @@ sh-bfo:BFO_0000139-subjects-shape
 	sh:targetSubjectsOf obo:BFO_0000139 ;
 	.
 
-sh-bfo:BFO_0000141-shape
+sh-bfo:BFO_0000140-shape
 	a sh:NodeShape ;
-	rdfs:comment "immaterial entity"@en ;
+	rdfs:comment "continuant fiat boundary"@en ;
 	sh:property
 		[
 			a sh:PropertyShape ;
-			sh:class obo:BFO_0000141 ;
+			sh:class obo:BFO_0000140 ;
+			sh:path obo:BFO_0000124 ;
+		] ,
+		[
+			a sh:PropertyShape ;
+			sh:class obo:BFO_0000140 ;
 			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:class obo:BFO_0000141 ;
-			sh:path obo:BFO_0000187 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000040 ;
-			] ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
-				a sh:NodeShape ;
-				sh:class obo:BFO_0000040 ;
-			] ;
-			sh:path obo:BFO_0000187 ;
 		]
 		;
+	sh:targetClass obo:BFO_0000140 ;
+	.
+
+sh-bfo:BFO_0000141-shape
+	a sh:NodeShape ;
+	rdfs:comment "immaterial entity"@en ;
 	sh:targetClass obo:BFO_0000141 ;
 	.
 
 sh-bfo:BFO_0000142-disjointWith-BFO_0000146-shape
 	a sh:NodeShape ;
-	sh:message "obo:BFO_0000142 (one-dimensional continuant fiat boundary) and obo:BFO_0000146 (two-dimensional continuant fiat boundary) are disjoint classes."@en ;
+	sh:message "obo:BFO_0000142 (fiat line) and obo:BFO_0000146 (fiat surface) are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000146 ;
@@ -1098,7 +1168,7 @@ sh-bfo:BFO_0000142-disjointWith-BFO_0000146-shape
 
 sh-bfo:BFO_0000142-disjointWith-BFO_0000147-shape
 	a sh:NodeShape ;
-	sh:message "obo:BFO_0000142 (one-dimensional continuant fiat boundary) and obo:BFO_0000147 (zero-dimensional continuant fiat boundary) are disjoint classes."@en ;
+	sh:message "obo:BFO_0000142 (fiat line) and obo:BFO_0000147 (zero-dimensional continuant fiat boundary) are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000147 ;
@@ -1108,41 +1178,45 @@ sh-bfo:BFO_0000142-disjointWith-BFO_0000147-shape
 
 sh-bfo:BFO_0000142-shape
 	a sh:NodeShape ;
-	rdfs:comment "one-dimensional continuant fiat boundary"@en ;
-	sh:property
-		[
-			a sh:PropertyShape ;
-			sh:not [
+	rdfs:comment "fiat line"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:or (
+			[
 				a sh:NodeShape ;
-				sh:class obo:BFO_0000146 ;
-			] ;
-			sh:path obo:BFO_0000178 ;
-		] ,
-		[
-			a sh:PropertyShape ;
-			sh:not [
+				sh:class obo:BFO_0000142 ;
+			]
+			[
 				a sh:NodeShape ;
-				sh:class obo:BFO_0000146 ;
-			] ;
-			sh:path obo:BFO_0000187 ;
-		]
-		;
+				sh:class obo:BFO_0000147 ;
+			]
+		) ;
+		sh:path obo:BFO_0000178 ;
+	] ;
 	sh:targetClass obo:BFO_0000142 ;
 	.
 
-sh-bfo:BFO_0000144-disjointWith-BFO_0000182-shape
+sh-bfo:BFO_0000144-shape
 	a sh:NodeShape ;
-	sh:message "obo:BFO_0000144 (process profile) and obo:BFO_0000182 (history) are disjoint classes."@en ;
+	rdfs:comment "process profile"@en ;
+	sh:message "BFO_0000144 does not appear in BFO-2020."@en ;
 	sh:not [
 		a sh:NodeShape ;
-		sh:class obo:BFO_0000182 ;
+		sh:class obo:BFO_0000144 ;
 	] ;
+	sh:severity sh:Warning ;
 	sh:targetClass obo:BFO_0000144 ;
+	.
+
+sh-bfo:BFO_0000145-shape
+	a sh:NodeShape ;
+	rdfs:comment "relational quality"@en ;
+	sh:targetClass obo:BFO_0000145 ;
 	.
 
 sh-bfo:BFO_0000146-disjointWith-BFO_0000147-shape
 	a sh:NodeShape ;
-	sh:message "obo:BFO_0000146 (two-dimensional continuant fiat boundary) and obo:BFO_0000147 (zero-dimensional continuant fiat boundary) are disjoint classes."@en ;
+	sh:message "obo:BFO_0000146 (fiat surface) and obo:BFO_0000147 (fiat point) are disjoint classes."@en ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000147 ;
@@ -1150,73 +1224,304 @@ sh-bfo:BFO_0000146-disjointWith-BFO_0000147-shape
 	sh:targetClass obo:BFO_0000146 ;
 	.
 
+sh-bfo:BFO_0000146-shape
+	a sh:NodeShape ;
+	rdfs:comment "fiat surface"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000140 ;
+		sh:path obo:BFO_0000178 ;
+	] ;
+	sh:targetClass obo:BFO_0000146 ;
+	.
+
+sh-bfo:BFO_0000147-shape
+	a sh:NodeShape ;
+	rdfs:comment "fiat point"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:class obo:BFO_0000147 ;
+		sh:path obo:BFO_0000178 ;
+	] ;
+	sh:targetClass obo:BFO_0000147 ;
+	.
+
 sh-bfo:BFO_0000148-shape
 	a sh:NodeShape ;
 	rdfs:comment "zero-dimensional temporal region"@en ;
 	sh:property [
 		a sh:PropertyShape ;
-		sh:maxCount "0"^^xsd:integer ;
-		sh:path obo:BFO_0000118 ;
+		sh:class obo:BFO_0000148 ;
+		sh:path obo:BFO_0000121 ;
 	] ;
 	sh:targetClass obo:BFO_0000148 ;
-	.
-
-sh-bfo:BFO_0000151-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "projects onto spatial region at some time"@en ;
-	sh:class obo:BFO_0000006 ;
-	sh:targetObjectsOf obo:BFO_0000151 ;
 	.
 
 sh-bfo:BFO_0000151-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "projects onto spatial region at some time"@en ;
-	sh:class obo:BFO_0000011 ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000151 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000151 ;
+		sh:severity sh:Warning ;
+	] ;
 	sh:targetSubjectsOf obo:BFO_0000151 ;
 	.
 
-sh-bfo:BFO_0000158-objects-shape
+sh-bfo:BFO_0000153-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "bearer of at all times"@en ;
-	sh:class obo:BFO_0000020 ;
-	sh:targetObjectsOf obo:BFO_0000158 ;
+	rdfs:comment "temporally projects onto"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000153 ;
+	.
+
+sh-bfo:BFO_0000153-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "temporally projects onto"@en ;
+	sh:class obo:BFO_0000011 ;
+	sh:targetSubjectsOf obo:BFO_0000153 ;
 	.
 
 sh-bfo:BFO_0000158-subjects-shape
 	a sh:NodeShape ;
 	rdfs:comment "bearer of at all times"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000158 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000158 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000158 ;
+	.
+
+sh-bfo:BFO_0000159-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has quality at all times"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000159 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000159 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000159 ;
+	.
+
+sh-bfo:BFO_0000168-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has specific dependent at all times"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000168 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000168 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000168 ;
+	.
+
+sh-bfo:BFO_0000169-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depends on at some time"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000169 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000169 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000169 ;
+	.
+
+sh-bfo:BFO_0000171-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "location of"@en ;
 	sh:class obo:BFO_0000004 ;
 	sh:not [
 		a sh:NodeShape ;
 		sh:class obo:BFO_0000006 ;
 	] ;
-	sh:targetSubjectsOf obo:BFO_0000158 ;
+	sh:targetObjectsOf obo:BFO_0000171 ;
 	.
 
-sh-bfo:BFO_0000159-objects-shape
+sh-bfo:BFO_0000171-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has quality at all times"@en ;
-	sh:class obo:BFO_0000019 ;
+	rdfs:comment "location of"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000171 ;
+	.
+
+sh-bfo:BFO_0000174-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has proper continuant part at some time"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000174 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000174 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000174 ;
+	.
+
+sh-bfo:BFO_0000176-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "continuant part of"@en ;
+	sh:class obo:BFO_0000002 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000159 ;
+	sh:targetObjectsOf obo:BFO_0000176 ;
 	.
 
-sh-bfo:BFO_0000168-objects-shape
+sh-bfo:BFO_0000176-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has specific dependent at all times"@en ;
+	rdfs:comment "continuant part of"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000176 ;
+	.
+
+sh-bfo:BFO_0000177-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at all times"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000177 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000177 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000177 ;
+	.
+
+sh-bfo:BFO_0000178-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part"@en ;
+	sh:class obo:BFO_0000002 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000168 ;
+	sh:targetObjectsOf obo:BFO_0000178 ;
 	.
 
-sh-bfo:BFO_0000169-objects-shape
+sh-bfo:BFO_0000178-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "specifically depends on at some time"@en ;
+	rdfs:comment "has continuant part"@en ;
+	sh:class obo:BFO_0000002 ;
+	sh:targetSubjectsOf obo:BFO_0000178 ;
+	.
+
+sh-bfo:BFO_0000182-shape
+	a sh:NodeShape ;
+	rdfs:comment "history"@en ;
+	sh:targetClass obo:BFO_0000182 ;
+	.
+
+sh-bfo:BFO_0000183-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "environs"@en ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
 	sh:or (
 		[
 			a sh:NodeShape ;
 			sh:class obo:BFO_0000015 ;
 		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000035 ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000183 ;
+	.
+
+sh-bfo:BFO_0000183-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "environs"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000029 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000040 ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000183 ;
+	.
+
+sh-bfo:BFO_0000184-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "history of"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000184 ;
+	.
+
+sh-bfo:BFO_0000184-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "history of"@en ;
+	sh:class obo:BFO_0000182 ;
+	sh:targetSubjectsOf obo:BFO_0000184 ;
+	.
+
+sh-bfo:BFO_0000185-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has history"@en ;
+	sh:class obo:BFO_0000182 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000185 ;
+	.
+
+sh-bfo:BFO_0000185-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has history"@en ;
+	sh:class obo:BFO_0000040 ;
+	sh:targetSubjectsOf obo:BFO_0000185 ;
+	.
+
+sh-bfo:BFO_0000186-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "part of continuant at all times that whole exists"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000186 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000186 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000186 ;
+	.
+
+sh-bfo:BFO_0000187-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has continuant part at all times that part exists"@en ;
+	sh:property [
+		a sh:PropertyShape ;
+		sh:maxCount "0"^^xsd:integer ;
+		sh:message "BFO_0000187 does not appear in BFO-2020."@en ;
+		sh:path obo:BFO_0000187 ;
+		sh:severity sh:Warning ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000187 ;
+	.
+
+sh-bfo:BFO_0000194-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depended on by"@en ;
+	sh:class obo:BFO_0000020 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000194 ;
+	.
+
+sh-bfo:BFO_0000194-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depended on by"@en ;
+	sh:or (
 		[
 			a sh:NodeShape ;
 			sh:class obo:BFO_0000020 ;
@@ -1230,12 +1535,86 @@ sh-bfo:BFO_0000169-objects-shape
 			] ;
 		]
 	) ;
-	sh:targetObjectsOf obo:BFO_0000169 ;
+	sh:targetSubjectsOf obo:BFO_0000194 ;
 	.
 
-sh-bfo:BFO_0000169-subjects-shape
+sh-bfo:BFO_0000195-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "specifically depends on at some time"@en ;
+	rdfs:comment "specifically depends on"@en ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000020 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000004 ;
+			sh:not [
+				a sh:NodeShape ;
+				sh:class obo:BFO_0000006 ;
+			] ;
+		]
+	) ;
+	sh:targetObjectsOf obo:BFO_0000195 ;
+	.
+
+sh-bfo:BFO_0000195-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "specifically depends on"@en ;
+	sh:class obo:BFO_0000020 ;
+	sh:targetSubjectsOf obo:BFO_0000195 ;
+	.
+
+sh-bfo:BFO_0000196-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "bearer of"@en ;
+	sh:class obo:BFO_0000020 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000196 ;
+	.
+
+sh-bfo:BFO_0000196-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "bearer of"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000196 ;
+	.
+
+sh-bfo:BFO_0000197-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "inheres in"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetObjectsOf obo:BFO_0000197 ;
+	.
+
+sh-bfo:BFO_0000197-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "inheres in"@en ;
+	sh:class obo:BFO_0000020 ;
+	sh:targetSubjectsOf obo:BFO_0000197 ;
+	.
+
+sh-bfo:BFO_0000199-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "occupies temporal region"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000199 ;
+	.
+
+sh-bfo:BFO_0000199-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "occupies temporal region"@en ;
 	sh:or (
 		[
 			a sh:NodeShape ;
@@ -1243,89 +1622,154 @@ sh-bfo:BFO_0000169-subjects-shape
 		]
 		[
 			a sh:NodeShape ;
-			sh:class obo:BFO_0000020 ;
+			sh:class obo:BFO_0000035 ;
 		]
 	) ;
-	sh:targetSubjectsOf obo:BFO_0000169 ;
+	sh:targetSubjectsOf obo:BFO_0000199 ;
 	.
 
-sh-bfo:BFO_0000174-objects-shape
+sh-bfo:BFO_0000200-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has proper continuant part at some time"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetObjectsOf obo:BFO_0000174 ;
-	.
-
-sh-bfo:BFO_0000174-subjects-shape
-	a sh:NodeShape ;
-	rdfs:comment "has proper continuant part at some time"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetSubjectsOf obo:BFO_0000174 ;
-	.
-
-sh-bfo:BFO_0000176-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "part of continuant at some time"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetObjectsOf obo:BFO_0000176 ;
-	.
-
-sh-bfo:BFO_0000176-subjects-shape
-	a sh:NodeShape ;
-	rdfs:comment "part of continuant at some time"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetSubjectsOf obo:BFO_0000176 ;
-	.
-
-sh-bfo:BFO_0000177-objects-shape
-	a sh:NodeShape ;
-	rdfs:comment "part of continuant at all times"@en ;
+	rdfs:comment "occupies spatiotemporal region"@en ;
+	sh:class obo:BFO_0000011 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000177 ;
+	sh:targetObjectsOf obo:BFO_0000200 ;
 	.
 
-sh-bfo:BFO_0000178-objects-shape
+sh-bfo:BFO_0000200-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has continuant part at some time"@en ;
-	sh:class obo:BFO_0000002 ;
+	rdfs:comment "occupies spatiotemporal region"@en ;
+	sh:or (
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000015 ;
+		]
+		[
+			a sh:NodeShape ;
+			sh:class obo:BFO_0000035 ;
+		]
+	) ;
+	sh:targetSubjectsOf obo:BFO_0000200 ;
+	.
+
+sh-bfo:BFO_0000202-shape
+	a sh:NodeShape ;
+	rdfs:comment "temporal interval"@en ;
+	sh:targetClass obo:BFO_0000202 ;
+	.
+
+sh-bfo:BFO_0000203-shape
+	a sh:NodeShape ;
+	rdfs:comment "temporal instant"@en ;
+	sh:targetClass obo:BFO_0000203 ;
+	.
+
+sh-bfo:BFO_0000210-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "occupies spatial region"@en ;
+	sh:class obo:BFO_0000006 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000178 ;
+	sh:targetObjectsOf obo:BFO_0000210 ;
 	.
 
-sh-bfo:BFO_0000178-subjects-shape
+sh-bfo:BFO_0000210-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has continuant part at some time"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetSubjectsOf obo:BFO_0000178 ;
+	rdfs:comment "occupies spatial region"@en ;
+	sh:class obo:BFO_0000004 ;
+	sh:not [
+		a sh:NodeShape ;
+		sh:class obo:BFO_0000006 ;
+	] ;
+	sh:targetSubjectsOf obo:BFO_0000210 ;
 	.
 
-sh-bfo:BFO_0000186-objects-shape
+sh-bfo:BFO_0000216-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "part of continuant at all times that whole exists"@en ;
-	sh:class obo:BFO_0000002 ;
+	rdfs:comment "spatially projects onto"@en ;
+	sh:class obo:BFO_0000006 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000186 ;
+	sh:targetObjectsOf obo:BFO_0000216 ;
 	.
 
-sh-bfo:BFO_0000186-subjects-shape
+sh-bfo:BFO_0000216-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "part of continuant at all times that whole exists"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetSubjectsOf obo:BFO_0000186 ;
+	rdfs:comment "spatially projects onto"@en ;
+	sh:class obo:BFO_0000011 ;
+	sh:targetSubjectsOf obo:BFO_0000216 ;
 	.
 
-sh-bfo:BFO_0000187-objects-shape
+sh-bfo:BFO_0000218-objects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has continuant part at all times that part exists"@en ;
-	sh:class obo:BFO_0000002 ;
+	rdfs:comment "has material basis"@en ;
+	sh:class obo:BFO_0000040 ;
 	sh:nodeKind sh:BlankNodeOrIRI ;
-	sh:targetObjectsOf obo:BFO_0000187 ;
+	sh:targetObjectsOf obo:BFO_0000218 ;
 	.
 
-sh-bfo:BFO_0000187-subjects-shape
+sh-bfo:BFO_0000218-subjects-shape
 	a sh:NodeShape ;
-	rdfs:comment "has continuant part at all times that part exists"@en ;
-	sh:class obo:BFO_0000002 ;
-	sh:targetSubjectsOf obo:BFO_0000187 ;
+	rdfs:comment "has material basis"@en ;
+	sh:class obo:BFO_0000016 ;
+	sh:targetSubjectsOf obo:BFO_0000218 ;
+	.
+
+sh-bfo:BFO_0000221-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "first instant of"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000221 ;
+	.
+
+sh-bfo:BFO_0000221-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "first instant of"@en ;
+	sh:class obo:BFO_0000203 ;
+	sh:targetSubjectsOf obo:BFO_0000221 ;
+	.
+
+sh-bfo:BFO_0000222-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has first instant"@en ;
+	sh:class obo:BFO_0000203 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000222 ;
+	.
+
+sh-bfo:BFO_0000222-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has first instant"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:targetSubjectsOf obo:BFO_0000222 ;
+	.
+
+sh-bfo:BFO_0000223-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "last instant of"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000223 ;
+	.
+
+sh-bfo:BFO_0000223-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "last instant of"@en ;
+	sh:class obo:BFO_0000203 ;
+	sh:targetSubjectsOf obo:BFO_0000223 ;
+	.
+
+sh-bfo:BFO_0000224-objects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has last instant"@en ;
+	sh:class obo:BFO_0000203 ;
+	sh:nodeKind sh:BlankNodeOrIRI ;
+	sh:targetObjectsOf obo:BFO_0000224 ;
+	.
+
+sh-bfo:BFO_0000224-subjects-shape
+	a sh:NodeShape ;
+	rdfs:comment "has last instant"@en ;
+	sh:class obo:BFO_0000008 ;
+	sh:targetSubjectsOf obo:BFO_0000224 ;
 	.
 

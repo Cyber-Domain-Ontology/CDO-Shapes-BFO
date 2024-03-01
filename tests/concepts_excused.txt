@@ -1,7 +1,20 @@
-# Use this file to store IRIs of classes or properties that should be
-# excused from demonstration with exemplar triples.
-# Each line of this file should store one expanded IRI, e.g.:
-#
-# http://example.org/ontology/example/DeletedClass
-#
-# Lines with a leading '#' character are ignored.
+# Some initially-reviewed concepts were not implemented in BFO-2020.
+http://purl.obolibrary.org/obo/BFO_0000052
+http://purl.obolibrary.org/obo/BFO_0000070
+http://purl.obolibrary.org/obo/BFO_0000080
+http://purl.obolibrary.org/obo/BFO_0000083
+http://purl.obolibrary.org/obo/BFO_0000110
+http://purl.obolibrary.org/obo/BFO_0000118
+http://purl.obolibrary.org/obo/BFO_0000125
+http://purl.obolibrary.org/obo/BFO_0000126
+http://purl.obolibrary.org/obo/BFO_0000130
+http://purl.obolibrary.org/obo/BFO_0000144
+http://purl.obolibrary.org/obo/BFO_0000151
+http://purl.obolibrary.org/obo/BFO_0000158
+http://purl.obolibrary.org/obo/BFO_0000159
+http://purl.obolibrary.org/obo/BFO_0000168
+http://purl.obolibrary.org/obo/BFO_0000169
+http://purl.obolibrary.org/obo/BFO_0000174
+http://purl.obolibrary.org/obo/BFO_0000177
+http://purl.obolibrary.org/obo/BFO_0000186
+http://purl.obolibrary.org/obo/BFO_0000187

@@ -1,2 +1,2 @@
 http://example.org/shapes/bfo	${top_srcdir}/shapes/sh-bfo.ttl
-https://raw.githubusercontent.com/Cyber-Domain-Ontology/CDO-Shapes-BFO/main/dependencies/BFO.ttl	${top_srcdir}/dependencies/BFO.ttl
+http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl	${top_srcdir}/dependencies/BFO.ttl

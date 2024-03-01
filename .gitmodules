@@ -1,6 +1,6 @@
-[submodule "dependencies/BFO"]
-	path = dependencies/BFO
-	url = https://github.com/BFO-ontology/BFO.git
+[submodule "dependencies/BFO-2020"]
+	path = dependencies/BFO-2020
+	url = https://github.com/BFO-ontology/BFO-2020.git
 	branch = master
 [submodule "dependencies/UCO"]
 	path = dependencies/UCO

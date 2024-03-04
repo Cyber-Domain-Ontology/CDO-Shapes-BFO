@@ -1,4 +1,4 @@
-# imports: http://example.org/shapes/bfo
+# imports: http://example.org/shapes/sh-bfo
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix kb: <http://example.org/kb/> .
@@ -11,7 +11,7 @@
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/bfo> ;
+	owl:imports <http://example.org/shapes/sh-bfo> ;
 	.
 
 kb:Continuant-13a8fe95-cca2-4df6-8f91-7930ec2cf095

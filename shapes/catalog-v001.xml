@@ -2,5 +2,5 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
     <uri id="User Entered Import Resolution" uri="../dependencies/BFO.ttl" name="http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/UCO/ontology/owl/owl.ttl" name="https://ontology.unifiedcyberontology.org/owl/1.3.0"/>
-    <uri id="User Entered Import Resolution" uri="sh-bfo.ttl" name="http://example.org/shapes/bfo"/>
+    <uri id="User Entered Import Resolution" uri="sh-bfo.ttl" name="http://example.org/shapes/sh-bfo"/>
 </catalog>

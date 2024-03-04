@@ -1,2 +1,2 @@
-http://example.org/shapes/bfo	${top_srcdir}/shapes/sh-bfo.ttl
+http://example.org/shapes/sh-bfo	${top_srcdir}/shapes/sh-bfo.ttl
 http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl	${top_srcdir}/dependencies/BFO.ttl

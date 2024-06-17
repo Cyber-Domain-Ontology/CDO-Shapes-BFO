@@ -1,6 +1,7 @@
 # imports: http://example.org/shapes/sh-bfo
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix ex: <http://example.org/ontology/example/> .
 @prefix kb: <http://example.org/kb/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

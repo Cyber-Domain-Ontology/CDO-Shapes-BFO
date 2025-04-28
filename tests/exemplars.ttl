@@ -533,7 +533,7 @@ kb:SpecificallyDependentContinuant-fe0b19d8-5d41-4011-ae47-9f82ff972865
 
 kb:TemporalInstant-080014e3-e491-4103-add7-4d3e3883ad82
 	a obo:BFO_0000203 ;
-	obo:BFO_0000223 kb:b2460c2c-bcc4-41d7-aa74-af40f8cce598 ;
+	obo:BFO_0000223 kb:TemporalRegion-b2460c2c-bcc4-41d7-aa74-af40f8cce598 ;
 	.
 
 kb:TemporalInstant-1b51851b-a496-4e2f-9888-56c2415fa7bb
@@ -542,7 +542,7 @@ kb:TemporalInstant-1b51851b-a496-4e2f-9888-56c2415fa7bb
 
 kb:TemporalInstant-7c25b4f4-dc0a-4d5d-ba12-0f80a8e1b172
 	a obo:BFO_0000203 ;
-	obo:BFO_0000221 kb:a37d65fb-e615-43f3-ba39-e7b76dffa981 ;
+	obo:BFO_0000221 kb:TemporalRegion-a37d65fb-e615-43f3-ba39-e7b76dffa981 ;
 	.
 
 kb:TemporalInstant-deadfc20-b0f9-47cf-b07e-6603cf75c3eb

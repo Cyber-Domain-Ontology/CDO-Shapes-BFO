@@ -2,7 +2,7 @@
 
 ![Repository Status](https://img.shields.io/badge/-exploratory-informational)
 
-This repository provides [SHACL](https://www.w3.org/TR/shacl/) shapes to review usage of [BFO](https://github.com/BFO-ontology/BFO).
+This repository provides [SHACL](https://www.w3.org/TR/shacl/) shapes to review usage of [BFO](https://github.com/BFO-ontology/BFO-2020).
 
 The CDO Shapes development rationale and design is [here](https://cyberdomainontology.org/ontology/development/#shapes).
 

@@ -31,7 +31,7 @@ $(RDF_TOOLKIT_JAR):
 	@test -r $@
 
 BFO.ttl: \
-  BFO-2020/src/owl/bfo-core.ttl \
+  BFO-2020/21838-2/owl/bfo-core.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
 	source $(top_srcdir)/venv/bin/activate \

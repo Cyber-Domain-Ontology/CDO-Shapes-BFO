@@ -22,6 +22,14 @@ uco_srcdir := $(top_srcdir)/dependencies/UCO
 
 RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 
+# TODO: This variable lists files for Make to generate and delete on
+# 'make clean' calls.  This variable should be adapted to list each file
+# to normalize.
+# Note that to support the catalog-v001.xml preconditions, this list
+# must only be files in this directory.
+normalized_ttls := \
+  formatted-BFO.ttl
+
 all: \
   catalog-v001.xml
 
@@ -30,7 +38,31 @@ $(RDF_TOOLKIT_JAR):
 	@echo "ERROR:dependencies/Makefile:rdf-toolkit.jar not found.  Did you run `make` from the top source directory?" >&2
 	@test -r $@
 
-BFO.ttl: \
+catalog-v001.xml: \
+  $(normalized_ttls) \
+  $(top_srcdir)/.venv.done.log \
+  $(top_srcdir)/etc/domain_directories.tsv \
+  $(top_srcdir)/etc/dependency_files.tsv \
+  $(top_srcdir)/src/create-catalog-v001.xml.py
+	rm -f _$@
+	source $(top_srcdir)/venv/bin/activate \
+	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
+	    _$@ \
+	    $(top_srcdir)/etc/domain_directories.tsv \
+	    $(top_srcdir)/etc/dependency_files.tsv \
+	    "$(top_srcdir)" \
+	    $(normalized_ttls)
+	mv _$@ $@
+
+check: \
+  all
+
+clean:
+	@rm -f \
+	  $(normalized_ttls) \
+	  catalog-v001.xml
+
+formatted-BFO.ttl: \
   BFO-2020/21838-2/owl/bfo-core.ttl \
   $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log
@@ -44,47 +76,4 @@ BFO.ttl: \
 	  --source-format turtle \
 	  --target _$@ \
 	  --target-format turtle
-	mv _$@ $@
-
-catalog-v001.xml: \
-  $(top_srcdir)/.venv.done.log \
-  $(top_srcdir)/etc/domain_directories.tsv \
-  $(top_srcdir)/etc/dependency_files.tsv \
-  $(top_srcdir)/src/create-catalog-v001.xml.py \
-  imports-transitive.ttl
-	rm -f _$@
-	source $(top_srcdir)/venv/bin/activate \
-	  && python3 $(top_srcdir)/src/create-catalog-v001.xml.py \
-	    _$@ \
-	    $(top_srcdir)/etc/domain_directories.tsv \
-	    $(top_srcdir)/etc/dependency_files.tsv \
-	    "$(top_srcdir)" \
-	    imports-transitive.ttl
-	mv _$@ $@
-
-check: \
-  catalog-v001.xml
-
-clean:
-	@rm -f \
-	  BFO.ttl \
-	  catalog-v001.xml \
-	  imports-transitive.ttl
-
-# This recipe intentionally does not incorporate CDO ontologies (UCO,
-# CASE, etc.), to avoid redundant imports between multiple profiles.
-imports-transitive.ttl: \
-  BFO.ttl
-	source $(top_srcdir)/venv/bin/activate \
-	  && rdfpipe \
-	    --output-format turtle \
-	    $^ \
-	    > __$@
-	java -jar $(RDF_TOOLKIT_JAR) \
-	  --inline-blank-nodes \
-	  --source __$@ \
-	  --source-format turtle \
-	  --target _$@ \
-	  --target-format turtle
-	rm __$@
 	mv _$@ $@

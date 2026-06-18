@@ -1,4 +1,4 @@
-# imports: http://example.org/shapes/sh-bfo
+# imports: http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix ex: <http://example.org/ontology/example/> .
@@ -7,12 +7,14 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/kb>
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the shape-reviewed classes and properties, so SHACL shapes can be exercised for the reviewed ontology."@en ;
-	owl:imports <http://example.org/shapes/sh-bfo> ;
+	owl:imports <http://purl.obolibrary.org/obo/bfo/2020/bfo-core.ttl> ;
+	sh:shapesGraph <http://example.org/shapes/sh-bfo> ;
 	.
 
 kb:Continuant-13a8fe95-cca2-4df6-8f91-7930ec2cf095
